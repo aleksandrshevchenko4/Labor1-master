@@ -457,7 +457,7 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(132, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "Сохранить";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 

@@ -95,8 +95,8 @@ namespace Lab1
 
         private void button14_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
+            //listBox1.Items.Clear();
+            //listBox2.Items.Clear();
 
             listBox1.BeginUpdate();
             string[] Strings = richTextBox1.Text.Split(new char[] { '\n', '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -242,27 +242,142 @@ namespace Lab1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            listBox1.Items.AddRange(listBox2.Items);
+            listBox2.Items.Clear();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            if (comboBox1.Text == "По алфавиту(по возрастанию)")
+            {
+                List<String> list = new List<String>();
+                foreach (var item in listBox1.Items)
+                {
+                    list.Add(item.ToString());
+                }
+                list.Sort();
+                listBox1.Items.Clear();
+                foreach (var item in list)
+                {
+                    listBox1.Items.Add(item);
+                }
+            }
+            else if (comboBox1.Text == "По алфавиту(по убыванию)")
+            {
+                List<String> list = new List<String>();
+                foreach (var item in listBox1.Items)
+                {
+                    list.Add(item.ToString());
+                }
+                list.Sort();
+                list.Reverse();
+                listBox1.Items.Clear();
+                foreach (var item in list)
+                {
+                    listBox1.Items.Add(item);
+                }
+            }
+            else if (comboBox1.Text == "Длина слова(по возрастанию)")
+            {
+                List<String> list = new List<String>();
+                foreach (var item in listBox1.Items)
+                {
+                    list.Add(item.ToString());
+                }
+                listBox1.Items.Clear();
+                var sortResult = list.OrderBy(x => x.Length);
+                foreach (var item in sortResult)
+                {
+                    listBox1.Items.Add(item);
+                }
+            }
+            else if (comboBox1.Text == "Длина слова(по убыванию)")
+            {
+                List<String> list = new List<String>();
+                foreach (var item in listBox1.Items)
+                {
+                    list.Add(item.ToString());
+                }
+                listBox1.Items.Clear();
+                var sortResult = list.OrderByDescending(x => x.Length);
+                foreach (var item in sortResult)
+                {
+                    listBox1.Items.Add(item);
+                }
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            {
+                if (comboBox2.Text == "По алфавиту(по возрастанию)")
+                {
+                    List<String> list = new List<String>();
+                    foreach (var item in listBox2.Items)
+                    {
+                        list.Add(item.ToString());
+                    }
+                    list.Sort();
+                    listBox2.Items.Clear();
+                    foreach (var item in list)
+                    {
+                        listBox2.Items.Add(item);
+                    }
+                }
+                else if (comboBox2.Text == "По алфавиту(по убыванию)")
+                {
+                    List<String> list = new List<String>();
+                    foreach (var item in listBox2.Items)
+                    {
+                        list.Add(item.ToString());
+                    }
+                    list.Sort();
+                    list.Reverse();
+                    listBox2.Items.Clear();
+                    foreach (var item in list)
+                    {
+                        listBox2.Items.Add(item);
+                    }
+                }
+                else if (comboBox2.Text == "Длина слова(по возрастанию)")
+                {
+                    List<String> list = new List<String>();
+                    foreach (var item in listBox2.Items)
+                    {
+                        list.Add(item.ToString());
+                    }
+                    listBox2.Items.Clear();
+                    var sortResult = list.OrderBy(x => x.Length);
+                    foreach (var item in sortResult)
+                    {
+                        listBox2.Items.Add(item);
+                    }
+                }
+                else if (comboBox2.Text == "Длина слова(по убыванию)")
+                {
+                    List<String> list = new List<String>();
+                    foreach (var item in listBox2.Items)
+                    {
+                        list.Add(item.ToString());
+                    }
+                    listBox2.Items.Clear();
+                    var sortResult = list.OrderByDescending(x => x.Length);
+                    foreach (var item in sortResult)
+                    {
+                        listBox2.Items.Add(item);
+                    }
+                }
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox1.Sorted = true;
+            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox2.Sorted = true;
+            
         }
     }
 }
